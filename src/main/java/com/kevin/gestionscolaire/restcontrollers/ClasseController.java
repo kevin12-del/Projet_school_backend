@@ -1,10 +1,8 @@
 package com.kevin.gestionscolaire.restcontrollers;
 
 import com.kevin.gestionscolaire.dtos.ClasseDTO;
-import com.kevin.gestionscolaire.dtos.UserDto;
-import com.kevin.gestionscolaire.entities.Classe;
 import com.kevin.gestionscolaire.repositories.ClasseRepository;
-import com.kevin.gestionscolaire.services.ClasseService;
+import com.kevin.gestionscolaire.services.Interface.ClasseService;
 import lombok.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,14 +30,14 @@ public class ClasseController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @GetMapping(value = "/{id}/eleves")
-    public ResponseEntity<List<UserDto>> getElevesByClasse(@PathVariable Long id) {
+    /*@GetMapping(value = "/{id}/eleves")
+    public ResponseEntity<List<BaseUserDto>> getElevesByClasse(@PathVariable Long id) {
         ClasseDTO classeDTO = classeService.getClasseById(id).orElse(null);
-        if (classeDTO == null || classeDTO.getEleves() == null) {
+        if (classeDTO == null || classeDTO.getStudents() == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(classeDTO.getEleves());
-    }
+        return ResponseEntity.ok(classeDTO.getStudents());
+    }*/
 
     @PostMapping
     public ResponseEntity<ClasseDTO> createClasse(@RequestBody ClasseDTO classeDTO) {

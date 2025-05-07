@@ -1,9 +1,8 @@
 package com.kevin.gestionscolaire.restcontrollers;
 
 import com.kevin.gestionscolaire.dtos.NoteDTO;
-import com.kevin.gestionscolaire.entities.Note;
 import com.kevin.gestionscolaire.repositories.NoteRepository;
-import com.kevin.gestionscolaire.services.NoteService;
+import com.kevin.gestionscolaire.services.Interface.NoteService;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

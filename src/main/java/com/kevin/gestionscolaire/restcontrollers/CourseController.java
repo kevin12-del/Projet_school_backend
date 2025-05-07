@@ -1,9 +1,8 @@
 package com.kevin.gestionscolaire.restcontrollers;
 
 import com.kevin.gestionscolaire.dtos.CourseDTO;
-import com.kevin.gestionscolaire.entities.Course;
 import com.kevin.gestionscolaire.repositories.CourseRepository;
-import com.kevin.gestionscolaire.services.CourseService;
+import com.kevin.gestionscolaire.services.Interface.CourseService;
 import lombok.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

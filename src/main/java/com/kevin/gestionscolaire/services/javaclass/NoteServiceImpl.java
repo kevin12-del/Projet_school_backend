@@ -1,8 +1,11 @@
-package com.kevin.gestionscolaire.services;
+package com.kevin.gestionscolaire.services.javaclass;
 
 import com.kevin.gestionscolaire.dtos.NoteDTO;
 import com.kevin.gestionscolaire.entities.Note;
 import com.kevin.gestionscolaire.repositories.NoteRepository;
+import com.kevin.gestionscolaire.services.Interface.CourseService;
+import com.kevin.gestionscolaire.services.Interface.NoteService;
+import com.kevin.gestionscolaire.services.Interface.user.BaseUserService;
 import lombok.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class NoteServiceImpl implements NoteService{
+public class NoteServiceImpl implements NoteService {
 
     @Autowired
     NoteRepository noteRepository;
@@ -21,7 +24,7 @@ public class NoteServiceImpl implements NoteService{
     @Autowired
     ModelMapper modelMapper;
 
-    UserService userService;
+    BaseUserService baseUserService;
     CourseService courseService;
 
 
@@ -33,7 +36,7 @@ public class NoteServiceImpl implements NoteService{
     }
 
     public List<NoteDTO> getNotesByEleveId(Long eleveId){
-        List<Note> notes = noteRepository.findByEleve_Id(eleveId);
+        List<Note> notes = noteRepository.findByStudent_Id(eleveId);
         return notes.stream()
                 .map(note -> convertNoteToNoteDTO(note))
                 .collect(Collectors.toList());
@@ -63,25 +66,27 @@ public class NoteServiceImpl implements NoteService{
 
 
     public Note convertNoteDTOToNote(NoteDTO noteDTO){
-        Note note = new Note();
+        /*Note note = new Note();
         note.setId(noteDTO.getId());
         note.setNote(noteDTO.getNote());
         note.setDate(noteDTO.getDate());
-        note.setEleve(userService.convertUserDtoToUser(noteDTO.getEleve()));
+        note.setEleve(baseUserService.convertUserDtoToUser(noteDTO.getEleve()));
         note.setCourse(courseService.convertCourseDTOToCourse(noteDTO.getCourse()));
 
-        return note;
+        return note;*/
+        return null;
     }
 
     public NoteDTO convertNoteToNoteDTO(Note note){
-        NoteDTO noteDTO = new NoteDTO();
+        /*NoteDTO noteDTO = new NoteDTO();
         noteDTO.setId(note.getId());
         noteDTO.setNote(note.getNote());
         noteDTO.setDate(note.getDate());
-        noteDTO.setEleve(userService.convertUserToUserDto(note.getEleve()));
+        noteDTO.setEleve(baseUserService.convertUserToUserDto(note.getEleve()));
         noteDTO.setCourse(courseService.convertCourseToCourseDTO(note.getCourse()));
 
-        return noteDTO;
+        return noteDTO;*/
+        return null;
     }
 
 }

@@ -1,5 +1,6 @@
 package com.kevin.gestionscolaire.entities;
 
+import com.kevin.gestionscolaire.entities.user.Student;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,8 +16,8 @@ public class EleveClasse {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "eleve_id")
-    private User eleve;
+    @JoinColumn(name = "student_id")
+    private Student student;
 
     @ManyToOne
     @JoinColumn(name = "classe_id")

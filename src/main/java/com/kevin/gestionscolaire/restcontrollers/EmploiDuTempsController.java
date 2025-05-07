@@ -1,9 +1,8 @@
 package com.kevin.gestionscolaire.restcontrollers;
 
 import com.kevin.gestionscolaire.dtos.EmploiDuTempsDTO;
-import com.kevin.gestionscolaire.entities.EmploiDuTemps;
 import com.kevin.gestionscolaire.repositories.EmploiDuTempsRepository;
-import com.kevin.gestionscolaire.services.EmploiDuTempsService;
+import com.kevin.gestionscolaire.services.Interface.EmploiDuTempsService;
 import lombok.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

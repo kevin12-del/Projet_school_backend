@@ -1,4 +1,5 @@
 package com.kevin.gestionscolaire.dtos;
+import com.kevin.gestionscolaire.dtos.userdto.TeacherDTO;
 import lombok.*;
 
 @Data
@@ -9,6 +10,6 @@ public class CourseDTO {
 
     private Long id;
     private String nom;
-    private UserDto enseignant;
+    private TeacherDTO teacher;
     private ClasseDTO classe;
 }

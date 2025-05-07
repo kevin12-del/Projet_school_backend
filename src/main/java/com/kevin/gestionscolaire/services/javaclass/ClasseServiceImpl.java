@@ -1,11 +1,13 @@
-package com.kevin.gestionscolaire.services;
+package com.kevin.gestionscolaire.services.javaclass;
 
 import com.kevin.gestionscolaire.dtos.ClasseDTO;
-import com.kevin.gestionscolaire.dtos.UserDto;
+import com.kevin.gestionscolaire.dtos.userdto.StudentDTO;
 import com.kevin.gestionscolaire.entities.Classe;
 import com.kevin.gestionscolaire.entities.EleveClasse;
 import com.kevin.gestionscolaire.repositories.ClasseRepository;
 import com.kevin.gestionscolaire.repositories.EleveClasseRepository;
+import com.kevin.gestionscolaire.services.Interface.ClasseService;
+import com.kevin.gestionscolaire.services.Interface.user.BaseUserService;
 import lombok.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,7 @@ public class ClasseServiceImpl implements ClasseService {
     @Autowired
     EleveClasseRepository eleveClasseRepository;
 
-    UserService userService;
+    BaseUserService baseUserService;
 
 
     public List<ClasseDTO> getAllClasses(){
@@ -73,13 +75,14 @@ public class ClasseServiceImpl implements ClasseService {
         classeRepository.deleteById(id);
     }
 
-    public List<UserDto> getEleveByClasse(Long id, String anneeScolaire){
-        List<EleveClasse> elclass = eleveClasseRepository.findByClasse_IdAndAnneeScolaire(id, anneeScolaire);
-        List<UserDto> userDtos = new ArrayList<>();
+    public List<StudentDTO> getEleveByClasse(Long id, String anneeScolaire){
+        /*List<EleveClasse> elclass = eleveClasseRepository.findByClasse_IdAndAnneeScolaire(id, anneeScolaire);
+        List<BaseUserDto> baseUserDtos = new ArrayList<>();
         elclass.forEach(eleveClasse -> {
-            userDtos.add(userService.convertUserToUserDto(eleveClasse.getEleve()));
+            baseUserDtos.add(baseUserService.convertUserToUserDto(eleveClasse.getEleve()));
         });
-        return userDtos;
+        return baseUserDtos;*/
+        return null;
     }
 
     public ClasseDTO convertClasseToClasseDTO(Classe classe){
@@ -88,7 +91,7 @@ public class ClasseServiceImpl implements ClasseService {
         classeDTO.setNom(classe.getNom());
         classeDTO.setNiveau(classe.getNiveau());
         classeDTO.setAnneeScolaire(classe.getAnneeScolaire());
-        classeDTO.setEleves(getEleveByClasse(classe.getId(), classe.getAnneeScolaire()));
+        classeDTO.setStudents(getEleveByClasse(classe.getId(), classe.getAnneeScolaire()));
         return classeDTO;
     }
 

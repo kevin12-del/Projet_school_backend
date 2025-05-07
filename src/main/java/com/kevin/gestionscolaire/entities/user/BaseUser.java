@@ -1,4 +1,4 @@
-package com.kevin.gestionscolaire.entities;
+package com.kevin.gestionscolaire.entities.user;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -6,10 +6,10 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "base_user")
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class BaseUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

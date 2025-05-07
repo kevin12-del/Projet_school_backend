@@ -2,6 +2,7 @@ package com.kevin.gestionscolaire.dtos;
 
 import java.util.List;
 
+import com.kevin.gestionscolaire.dtos.userdto.StudentDTO;
 import lombok.*;
 
 @Data
@@ -16,5 +17,5 @@ public class ClasseDTO {
     private String niveau;
     private String anneeScolaire;
 
-    List<UserDto> eleves;
+    List<StudentDTO> students;
 }

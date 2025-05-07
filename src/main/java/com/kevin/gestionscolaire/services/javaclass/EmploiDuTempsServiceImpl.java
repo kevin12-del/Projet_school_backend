@@ -1,8 +1,10 @@
-package com.kevin.gestionscolaire.services;
+package com.kevin.gestionscolaire.services.javaclass;
 
 import com.kevin.gestionscolaire.dtos.EmploiDuTempsDTO;
 import com.kevin.gestionscolaire.entities.EmploiDuTemps;
 import com.kevin.gestionscolaire.repositories.EmploiDuTempsRepository;
+import com.kevin.gestionscolaire.services.Interface.CourseService;
+import com.kevin.gestionscolaire.services.Interface.EmploiDuTempsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

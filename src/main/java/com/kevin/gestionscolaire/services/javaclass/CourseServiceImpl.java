@@ -1,8 +1,10 @@
-package com.kevin.gestionscolaire.services;
+package com.kevin.gestionscolaire.services.javaclass;
 
 import com.kevin.gestionscolaire.dtos.CourseDTO;
 import com.kevin.gestionscolaire.entities.Course;
 import com.kevin.gestionscolaire.repositories.CourseRepository;
+import com.kevin.gestionscolaire.services.Interface.CourseService;
+import com.kevin.gestionscolaire.services.Interface.user.BaseUserService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class CourseServiceImpl implements CourseService{
+public class CourseServiceImpl implements CourseService {
 
     @Autowired
     CourseRepository courseRepository;
@@ -22,7 +24,7 @@ public class CourseServiceImpl implements CourseService{
     @Autowired
     ModelMapper modelMapper;
 
-    UserService userService;
+    BaseUserService baseUserService;
 
 
     public List<CourseDTO> getAllCourses(){
@@ -58,18 +60,20 @@ public class CourseServiceImpl implements CourseService{
     }
 
     public Course convertCourseDTOToCourse(CourseDTO courseDTO){
-        Course course = new Course();
+        /*Course course = new Course();
         course.setId(courseDTO.getId());
         course.setNom(courseDTO.getNom());
-        course.setEnseignant(userService.convertUserDtoToUser(courseDTO.getEnseignant()));
-        return course;
+        course.setEnseignant(baseUserService.convertUserDtoToUser(courseDTO.getEnseignant()));
+        return course;*/
+        return null;
     }
 
     public CourseDTO convertCourseToCourseDTO(Course course){
-        CourseDTO courseDTO = new CourseDTO();
+        /*CourseDTO courseDTO = new CourseDTO();
         courseDTO.setId(course.getId());
         courseDTO.setNom(course.getNom());
-        courseDTO.setEnseignant(userService.convertUserToUserDto(course.getEnseignant()));
-        return courseDTO;
+        courseDTO.setEnseignant(baseUserService.convertUserToUserDto(course.getEnseignant()));
+        return courseDTO;*/
+        return null;
     }
 }

@@ -1,5 +1,6 @@
 package com.kevin.gestionscolaire.entities;
 
+import com.kevin.gestionscolaire.entities.user.Student;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -17,8 +18,8 @@ public class Note {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "eleve_id")
-    private User eleve;
+    @JoinColumn(name = "student_id")
+    private Student student;
 
     @ManyToOne
     @JoinColumn(name = "course_id")

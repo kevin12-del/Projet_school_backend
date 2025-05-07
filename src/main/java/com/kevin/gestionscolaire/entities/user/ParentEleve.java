@@ -1,4 +1,4 @@
-package com.kevin.gestionscolaire.entities;
+package com.kevin.gestionscolaire.entities.user;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -16,11 +16,11 @@ public class ParentEleve {
 
     @ManyToOne
     @JoinColumn(name = "parent_id")
-    private User parent;
+    private Parent parent;
 
     @ManyToOne
-    @JoinColumn(name = "eleve_id")
-    private User eleve;
+    @JoinColumn(name = "student_id")
+    private Student student;
 
 }
 

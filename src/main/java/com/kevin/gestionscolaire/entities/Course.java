@@ -1,5 +1,6 @@
 package com.kevin.gestionscolaire.entities;
 
+import com.kevin.gestionscolaire.entities.user.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,12 +18,13 @@ public class Course {
     private String nom;
 
     @ManyToOne
-    @JoinColumn(name = "enseignant_id")
-    private User enseignant;
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
     @ManyToOne
     @JoinColumn(name = "classe_id")
     private Classe classe;
+
 
 }
 

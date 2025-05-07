@@ -1,10 +1,8 @@
 package com.kevin.gestionscolaire.dtos;
 
-import com.kevin.gestionscolaire.entities.Course;
-import com.kevin.gestionscolaire.entities.User;
-import jakarta.persistence.*;
-
 import java.time.LocalDate;
+
+import com.kevin.gestionscolaire.dtos.userdto.StudentDTO;
 import lombok.*;
 
 @Data
@@ -14,7 +12,7 @@ import lombok.*;
 public class NoteDTO {
 
     private Long id;
-    private UserDto eleve;
+    private StudentDTO student;
     private CourseDTO course;
     private Double note;
     private LocalDate date;

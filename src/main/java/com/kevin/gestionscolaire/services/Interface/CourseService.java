@@ -1,4 +1,4 @@
-package com.kevin.gestionscolaire.services;
+package com.kevin.gestionscolaire.services.Interface;
 
 import com.kevin.gestionscolaire.dtos.CourseDTO;
 import com.kevin.gestionscolaire.entities.Course;
