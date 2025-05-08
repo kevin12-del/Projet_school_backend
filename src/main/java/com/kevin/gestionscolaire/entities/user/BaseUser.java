@@ -24,7 +24,7 @@ public abstract class BaseUser {
     private Role role;
 
     public enum Role {
-        ADMIN, ENSEIGNANT, ELEVE, PARENT
+        ADMIN, TEACHER, STUDENT, PARENT
     }
 
 
